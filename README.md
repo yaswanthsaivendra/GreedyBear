@@ -7,6 +7,7 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/honeynet/greedybear/badge)](https://www.codefactor.io/repository/github/honeynet/greedybear)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
+[![Docker Repository on Quay](https://quay.io/repository/honeynet/greedybear/status "Docker Repository on Quay")](https://quay.io/repository/honeynet/greedybear)
 [![Pull request automation](https://github.com/honeynet/GreedyBear/actions/workflows/pull_request_automation.yml/badge.svg)](https://github.com/honeynet/GreedyBear/actions/workflows/pull_request_automation.yml)
 
 The project goal is to extract data of the attacks detected by a [TPOT](https://github.com/telekom-security/tpotce) or a cluster of them and to generate some feeds that can be used to prevent and detect attacks.

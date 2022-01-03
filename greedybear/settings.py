@@ -18,6 +18,9 @@ DEBUG = os.environ.get("DEBUG", False) == "True"
 DJANGO_LOG_DIRECTORY = "/var/log/greedybear/django"
 MOCK_CONNECTIONS = os.environ.get("MOCK_CONNECTIONS", False) == "True"
 ELASTIC_ENDPOINT = os.getenv("ELASTIC_ENDPOINT", "").split(",")
+if not ELASTIC_ENDPOINT:
+    print("ELASTIC_ENDPOINT must be populated")
+    exit(9)
 
 SLACK_TOKEN = os.environ.get("SLACK_TOKEN", "")
 SLACK_CHANNEL = os.environ.get("SLACK_CHANNEL", "")

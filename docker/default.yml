@@ -10,10 +10,7 @@ services:
       - ./env_file_postgres
 
   uwsgi:
-    build:
-      context: ..
-      dockerfile: docker/Dockerfile
-    image: honeynet/greedybear:test
+    image: quay.io/honeynet/greedybear:latest
     container_name: greedybear_uwsgi
     volumes:
       - ../configuration/uwsgi/greedybear.ini:/etc/uwsgi/sites/greedybear.ini
@@ -29,9 +26,7 @@ services:
       - postgres
 
   nginx:
-    build:
-      context: ..
-      dockerfile: docker/Dockerfile_nginx
+    image: quay.io/honeynet/greedybear_nginx:latest
     container_name: greedybear_nginx
     restart: unless-stopped
     volumes:
@@ -54,7 +49,7 @@ services:
       - postgres
 
   celery_beat:
-    image: honeynet/greedybear:test
+    image: quay.io/honeynet/greedybear:latest
     container_name: greedybear_celery_beat
     restart: unless-stopped
     command: /usr/local/bin/celery -A greedybear.celery beat --uid www-data --gid www-data --pidfile= --schedule=/tmp/celerybeat-schedule
@@ -68,7 +63,7 @@ services:
       - uwsgi
 
   celery_worker_default:
-    image: honeynet/greedybear:test
+    image: quay.io/honeynet/greedybear:latest
     container_name: greedybear_celery_worker_default
     restart: unless-stopped
     stop_grace_period: 3m

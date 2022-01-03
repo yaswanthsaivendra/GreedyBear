@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  uwsgi:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: honeynet/greedybear:test
+
+  nginx:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile_nginx
+    image: honeynet/greedybear_nginx:test
+
+  celery_beat:
+    image: honeynet/greedybear:test
+
+  celery_worker_default:
+    image: honeynet/greedybear:test
